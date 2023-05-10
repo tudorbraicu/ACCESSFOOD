@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title%}HOME{% endblock %}
+{% set active_page = "restaurant" %}
+{% block content %}
+<h1>Restaurants</h1>
+<div class='contents'>
+<ul>
+    {% for rst in rsts %}
+       <li>{{rst.name}}</li>
+    {% endfor %}
+ </ul>
+</div>
+{% endblock %}
+

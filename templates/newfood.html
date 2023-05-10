@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title%}HOME{% endblock %}
+{% set active_page = "newfood" %}
+{% block content %}
+<h1>Add Food</h1>
+<div class='contents'>
+<form action="#" method ="POST">
+    <label for="food_name"> Food name:</label>
+    <input type = "text" id ="food_name" name="food_name">
+    <br/>
+    <label for="rst_id"> Restaurant:</label>
+    <select name="rst_id" id="rst_id">
+    {% for rst in rsts %}
+        <option value="{{rst.id}}">{{rst.name}}</option>
+    {% endfor %}
+    </select>
+    <button ttype="submit">Submit</button>
+ </form>
+</div>
+{% endblock %}
