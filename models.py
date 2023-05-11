@@ -6,7 +6,9 @@ and connect to data tables.
 
 from sqlalchemy import ForeignKey, Column, INTEGER, TEXT
 from sqlalchemy.orm import relationship
+from werkzeug.security import generate_password_hash, check_password_hash
 from database import Base
+from flask_login import UserMixin
 
 class Restaurant(Base):
     __tablename__="restaurant"
@@ -21,7 +23,7 @@ class Restaurant(Base):
         self.name = name
         self.address = address
 
-class User(Base):
+class User(UserMixin,Base):
     __tablename__="user"
     id = Column("id", INTEGER, primary_key=True)
     username = Column("username", TEXT, nullable=False)
@@ -29,10 +31,9 @@ class User(Base):
 
     food = relationship("Food", back_populates="user")
 
-
     def __init__(self, username, password):
         self.username = username
-        self.password = password
+        self.password = generate_password_hash(password)
 
 
 class Food(Base):

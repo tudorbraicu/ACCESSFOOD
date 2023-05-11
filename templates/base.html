@@ -13,6 +13,7 @@
 
         <!-- Your Personal CSS BELOW this Line -->
         <link rel="stylesheet" type="text/css" href="/static/styles/style.css">
+       {% block style%}{% endblock %}
     </head>
 
     <body>
@@ -28,27 +29,34 @@
             <!-- TODO: Fix the links -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    {% if current_user.is_authenticated %}
                     <li class="nav-item"></li>
                         <a class="nav-link {{ 'active' if active_page == 'home' else '' }}" href="/">Home</a>
                     </li>
                     <li class="nav-item"></li>
-                        <a class="nav-link {{ 'active' if active_page == 'restaurants' else '' }}" href="/restaurant">Restaurants</a>
+                        <a class="nav-link {{ 'active' if active_page == 'food' else '' }}" href="/orderfood">Order Food</a>
                     </li>
                     <li class="nav-item"></li>
-                        <a class="nav-link {{ 'active' if active_page == 'food' else '' }}" href="/food">Food</a>
+                        <a class="nav-link {{ 'active' if active_page == 'newfood' else '' }}" href="/addfood">Add Food</a>
                     </li>
-
                     <li class="nav-item"></li>
-                    <a class="nav-link {{ 'active' if active_page == 'newfood' else '' }}" href="/add-food">Add Food</a>
-                </li>
+                        <a class="nav-link {{ 'active' if active_page == 'logout' else '' }}" href="/logout">Logout</a>
+                    </li>                    
+                    {% endif %}
                 </ul>
             </div>
         </nav>
 
-        <div class="container">
-            {% block content %}
-            {% endblock %}
+        <div class="main">
+        {% block content %}
+        {% endblock %}
         </div>
+
+        <footer class="text-center text-lg-start">
+            <div class="text-center p-3 footer">
+                <p>&copy; 2023 AccessFood. All rights reserved.</p>
+            </div>
+          </footer>
 
         <!-- Your Content ABOVE this Line -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

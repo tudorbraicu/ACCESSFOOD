@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title%}Order Food{% endblock %}
+{% set active_page = "orderfood" %}
+{% block content %}
+<h1>Foods</h1>
+<div class='contents'>
+<form action="#" method ="POST">
+
+<table>
+   <tr>
+      <th>Food</td><th>Restaurant</th><th>Address</th>
+   </tr>
+    {% for food in foods %}
+     <!--{% if not food[0].user_id %}-->    
+      <tr>
+         <td>{{food[0].name}}</td><td>{{food[1].name}}</td><td>{{food[1].address}}</td><td>{{food[1].user_id}}</td><td><input type="checkbox" id="f{{food[0].id}}" name="f{{food[0].id}}" value="f{{food[0].id}}"></td>
+      </tr>
+     <!-- {% endif %} -->
+    {% endfor %}
+</table>
+<button ttype="submit">Order</button>
+</form>
+</div>
+{% endblock %}
+
+
+

@@ -1,6 +1,10 @@
 
+html{
+    height: 100%;
+}
 
 body {
+    height: 100%;
     background-color: #30d354;
 }
 
@@ -29,4 +33,55 @@ body {
 
 .navbar {
     background-color: #20613e !important;
+}
+
+.text {
+    text-align: center;
+  }
+
+.footer {
+    background-color: #20613E;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.split {
+    display: flex;
+    height: 85vh;
+    align-items: center;
+}
+
+.home-food {
+    width: inherit;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.box .field{
+    margin-bottom: 10px;
+}
+
+.combo {
+    height: 30px;
+}
+
+.addfood {
+    text-align: center;
+}
+
+td, th {
+border-style: solid;
+}
+
+th {
+    text-align: center;
 }
