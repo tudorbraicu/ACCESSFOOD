@@ -1,5 +1,4 @@
-
-html{
+html {
     height: 100%;
 }
 
@@ -21,6 +20,7 @@ body {
 .contents {
     margin-top: 30px;
     margin-left: 30px;
+    display: flex;
 }
 
 .nav-link {
@@ -37,7 +37,7 @@ body {
 
 .text {
     text-align: center;
-  }
+}
 
 .footer {
     background-color: #20613E;
@@ -66,7 +66,7 @@ body {
     margin-top: 100px;
 }
 
-.box .field{
+.box .field {
     margin-bottom: 10px;
 }
 
@@ -74,14 +74,27 @@ body {
     height: 30px;
 }
 
-.addfood {
+.center {
     text-align: center;
 }
 
-td, th {
-border-style: solid;
+td,
+th {
+    border-style: solid;
 }
 
 th {
     text-align: center;
+}
+
+.dleft {
+    width: 50%;
+    display: inline-block;
+    text-align: -webkit-center;
+}
+
+.dight {
+    width: 50%;
+    display: inline-block;
+    text-align: -webkit-center;
 }

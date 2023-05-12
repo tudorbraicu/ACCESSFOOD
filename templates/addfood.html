@@ -3,17 +3,19 @@
 {% set active_page = "addfood" %}
 {% block content %}
 <h1>Add Food</h1>
-<div class='addfood contents'>
-    <form action="#" method ="POST">
-    <label for="food_name"> Food:</label>
-    <input type = "text" id ="food_name" name="food_name">
-    <!-- label for="rst_id"> Restaurant:</label -->
-    <select class="combo" name="rst_id" id="rst_id">
-    {% for rst in rsts %}
-        <option value="{{rst.id}}">{{rst.name}} - {{rst.address}}</option>
-    {% endfor %}
-    </select>
-    <button ttype="submit">Add</button>
- </form>
+<!-- Create field to submit food -->
+<div class='center contents'>
+    <form action="#" method="POST">
+        <label for="food_name"> Food:</label>
+        <input type="text" id="food_name" name="food_name">
+        <!-- list all the possible restaurants as drop down options -->
+        <select class="combo" name="rst_id" id="rst_id">
+            {% for rst in rsts %}
+            <option value="{{rst.id}}">{{rst.name}} - {{rst.address}}</option>
+            {% endfor %}
+        </select>
+        <!-- sumbit button -->
+        <button ttype="submit">Add</button>
+    </form>
 </div>
 {% endblock %}

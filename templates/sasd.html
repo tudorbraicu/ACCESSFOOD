@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title%}Order Food{% endblock %}
+{% set active_page = "orderfood" %}
+{% block content %}
+
+<div class='contents'>
+      <h1>Available Food</h1>
+      <form action="#" method="POST">
+         <table>
+            <tr>
+               <th>Food</td>
+               <th>Restaurant</th>
+               <th>Address</th>
+            </tr>
+            {% for food in foods %}
+            <tr>
+               <td>{{food[0].name}}</td>
+               <td>{{food[1].name}}</td>
+               <td>{{food[1].address}}</td>
+               <td><input type="checkbox" id="f{{food[0].id}}" name="f{{food[0].id}}" value="{{food[0].id}}"></td>
+            </tr>
+            {% endfor %}
+         </table>
+         <button ttype="submit">Order</button>
+      </form>
+</div>
+{% endblock %}

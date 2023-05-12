@@ -4,11 +4,11 @@
 <link rel="stylesheet" type="text/css" href="/static/styles/style.css"> {% endblock %}
 {% set active_page = "home" %}
 {% block content %}
-
 <div class="split row">
     <div class="left col-6">
         <img class="home-food" src="/static/images/food.jpg">
     </div>
+    <!-- Text about why AccessFood-->
     <div class="right col-6">
         <h1>Welcome to AccessFood</h1>
         <p> Did you know that food waste makes up about 8% of global greenhouse gas emissions? In order to adress this
@@ -17,9 +17,14 @@
             gives an opportunity for Restaurants to submit their waste food, and for people in need for food to access
             it easily.
         </p>
+        <!-- buttons for order and sumbit -->
         <div class="buttons ">
+            {% if current_user.is_authenticated and current_user.is_client() %}
             <a href="/orderfood" class="button btn btn-light">Order Food</a>
+            {% endif %}
+            {% if current_user.is_authenticated and current_user.is_admin() %}
             <a href="/addfood" class="button btn btn-light">Submit Food</a>
+            {% endif %}
         </div>
     </div>
 </div>
